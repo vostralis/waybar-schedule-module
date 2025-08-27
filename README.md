@@ -21,7 +21,11 @@ chmod +x ./run.sh
 echo 'URL = "ссылка на группу"' > .env
 ```
 
-3. настроить фетч расписания
+3. вручную первый раз скрапнуть расписание
+```bash
+./run.sh -f
+```
+4. настроить фетч расписания
 ```bash
 crontab -e
 ```
@@ -30,7 +34,7 @@ crontab -e
 @reboot ~/.config/waybar/waybar-schedule-module/run.sh -f
 ```
 
-4. добавить модуль в ```~/.config/waybar/config.jsonc```:
+5. добавить модуль в ```~/.config/waybar/config.jsonc```:
 ```json
 "custom/schedule": {
     "format": "<big>{}/big>",
